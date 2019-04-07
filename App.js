@@ -10,28 +10,40 @@ export default class App extends React.Component {
     displayValue: '0'
   }
 
+  addDigit = n => {
+    this.setState({ displayValue: n })
+  }
+
+  clearMemory = () => {
+    this.setState({ displayValue: '0' })
+  }
+
+  setOperation = operation => {
+
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Display value={this.state.displayValue} />
         <View style={styles.buttons}>
-          <Button label='AC' />
-          <Button label='/' />
+          <Button label='AC' triple onClick={this.clearMemory} />
+          <Button label='/' operation onClick={() => this.setOperation('/')} />
           <Button label='7' />
           <Button label='8' />
           <Button label='9' />
-          <Button label='*' />
+          <Button label='*' operation onClick={() => this.setOperation('*')} />
           <Button label='4' />
           <Button label='5' />
           <Button label='6' />
-          <Button label='-' />
+          <Button label='-' operation onClick={() => this.setOperation('-')} />
           <Button label='1' />
           <Button label='2' />
           <Button label='3' />
-          <Button label='+' />
-          <Button label='0' />
+          <Button label='+' operation onClick={() => this.setOperation('+')} />
+          <Button label='0' double />
           <Button label='.' />
-          <Button label='=' />
+          <Button label='=' operation onClick={() => this.setOperation('=')} />
         </View>
       </View>
     );
