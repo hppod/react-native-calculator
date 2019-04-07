@@ -53,7 +53,7 @@ export default class App extends React.Component {
 
       values[1] = 0
       this.setState({
-        displayValue: values[0],
+        displayValue: `${values[0]}`,
         operation: equals ? null : operation,
         current: equals ? 0 : 1,
         clearDisplay: !equals,
