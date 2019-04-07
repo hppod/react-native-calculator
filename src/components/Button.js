@@ -17,10 +17,21 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#888',
 
+    },
+    operationButton: {
+        color: '#fff',
+        backgroundColor: '#fa8231',
+    },
+    buttonDouble: {
+        width: (Dimensions.get('window').width / 4) * 2,
+    },
+    buttonTriple: {
+        width: (Dimensions.get('window').width / 4) * 3,
     }
 })
 
 export default props => {
+    
     return (
         <TouchableHighlight onPress={props.onClick}>
             <Text style={styles.button}>{props.label}</Text>
